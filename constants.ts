@@ -36,6 +36,21 @@ export const POS_BACKGROUND_COLORS: Record<PosTag, string> = {
   OTHER: 'bg-slate-200',      // Light Slate
 };
 
+/**
+ * Maps background color class names to their RGB values for color manipulation.
+ */
+export const POS_BACKGROUND_RGB: Record<string, { r: number; g: number; b: number }> = {
+  'bg-blue-900': { r: 30, g: 58, b: 138 },
+  'bg-green-200': { r: 187, g: 247, b: 208 },
+  'bg-red-900': { r: 127, g: 29, b: 29 },
+  'bg-purple-900': { r: 88, g: 28, b: 135 },
+  'bg-orange-200': { r: 254, g: 215, b: 170 },
+  'bg-teal-900': { r: 19, g: 78, b: 74 },
+  'bg-cyan-200': { r: 165, g: 243, b: 252 },
+  'bg-indigo-900': { r: 49, g: 46, b: 129 },
+  'bg-slate-200': { r: 226, g: 232, b: 240 },
+};
+
 
 export const POS_DESCRIPTIONS: Record<PosTag, string> = {
   NOUN: 'Nouns (e.g., dog, idea, city)',
