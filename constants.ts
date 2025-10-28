@@ -1,27 +1,39 @@
 import { type PosTag } from './types';
 
+// New high-contrast color palette based on user request:
+// - Dark Blue Background -> Light Red Text
+// - Light Green Background -> Dark Blue Text
+// - Dark Red Background -> Light Green Text
+// Other pairings follow a similar high-contrast (dark/light) principle.
+
 export const POS_COLORS: Record<PosTag, string> = {
-  NOUN: 'text-blue-600',
-  VERB: 'text-green-600',
-  ADJECTIVE: 'text-purple-600',
-  ADVERB: 'text-orange-600',
-  PRONOUN: 'text-red-600',
-  PREPOSITION: 'text-teal-600',
-  CONJUNCTION: 'text-pink-600',
-  DETERMINER: 'text-yellow-700',
-  OTHER: 'text-gray-500',
+  // Main pairings
+  NOUN: 'text-red-300',         // Light Red
+  VERB: 'text-blue-900',        // Dark Blue
+  ADJECTIVE: 'text-green-300',      // Light Green
+  
+  // Other high-contrast pairings
+  ADVERB: 'text-yellow-300',    // Light Yellow
+  PRONOUN: 'text-indigo-900',     // Dark Indigo
+  PREPOSITION: 'text-pink-300',     // Light Pink
+  CONJUNCTION: 'text-pink-900',       // Dark Pink
+  DETERMINER: 'text-orange-300',    // Light Orange
+  OTHER: 'text-slate-800',        // Dark Slate
 };
 
 export const POS_BACKGROUND_COLORS: Record<PosTag, string> = {
-  NOUN: 'bg-blue-100',
-  VERB: 'bg-green-100',
-  ADJECTIVE: 'bg-purple-100',
-  ADVERB: 'bg-orange-100',
-  PRONOUN: 'bg-red-100',
-  PREPOSITION: 'bg-teal-100',
-  CONJUNCTION: 'bg-pink-100',
-  DETERMINER: 'bg-yellow-100',
-  OTHER: 'bg-gray-100',
+  // Main pairings
+  NOUN: 'bg-blue-900',      // Dark Blue
+  VERB: 'bg-green-200',     // Light Green
+  ADJECTIVE: 'bg-red-900',      // Dark Red
+
+  // Other high-contrast pairings
+  ADVERB: 'bg-purple-900',    // Dark Purple
+  PRONOUN: 'bg-orange-200',   // Light Orange
+  PREPOSITION: 'bg-teal-900',     // Dark Teal
+  CONJUNCTION: 'bg-cyan-200',     // Light Cyan
+  DETERMINER: 'bg-indigo-900',  // Dark Indigo
+  OTHER: 'bg-slate-200',      // Light Slate
 };
 
 
