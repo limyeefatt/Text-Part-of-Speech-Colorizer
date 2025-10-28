@@ -1,0 +1,5 @@
+{
+  "name": "Web Page Part-of-Speech Colorizer",
+  "description": "An application that analyzes a block of text to identify parts of speech (nouns, verbs, adjectives, etc.), and displays the text with words colored according to their grammatical type.",
+  "requestFramePermissions": []
+}
