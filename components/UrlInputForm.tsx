@@ -23,7 +23,7 @@ export const UrlInputForm: React.FC<TextInputFormProps> = ({ initialText, onSubm
         onChange={(e) => setText(e.target.value)}
         placeholder="Enter text to analyze..."
         required
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow duration-200 shadow-sm disabled:bg-gray-100 h-48 resize-y"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow duration-200 shadow-sm disabled:bg-gray-100 h-48 resize-y bg-white text-black"
         disabled={isLoading}
         aria-label="Text input for analysis"
       />

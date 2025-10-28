@@ -1,16 +1,21 @@
 import React, { useMemo } from 'react';
 import { type WordPos } from '../types';
-import { POS_COLORS } from '../constants';
+import { POS_COLORS, POS_BACKGROUND_COLORS } from '../constants';
 
 interface ResultDisplayProps {
   text: string;
   posData: WordPos[];
 }
 
+interface PosStyle {
+  textColor: string;
+  bgColor: string;
+}
+
 export const ResultDisplay: React.FC<ResultDisplayProps> = ({ text, posData }) => {
 
   const wordPosMap = useMemo(() => {
-    const map = new Map<string, string[]>();
+    const map = new Map<string, PosStyle[]>();
     posData.forEach(({ word, pos }) => {
       // Normalize word for mapping: lowercase and trim punctuation that might be attached
       // Gemini can sometimes return words like "components."
@@ -18,9 +23,12 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ text, posData }) =
       if (normalizedWord && !map.has(normalizedWord)) {
         map.set(normalizedWord, []);
       }
-      // Push the color class for this instance of the word
+      // Push the style object for this instance of the word
       if(normalizedWord) {
-        map.get(normalizedWord)?.push(POS_COLORS[pos] || POS_COLORS.OTHER);
+        map.get(normalizedWord)?.push({
+          textColor: POS_COLORS[pos] || POS_COLORS.OTHER,
+          bgColor: POS_BACKGROUND_COLORS[pos] || POS_BACKGROUND_COLORS.OTHER,
+        });
       }
     });
     return map;
@@ -40,13 +48,13 @@ export const ResultDisplay: React.FC<ResultDisplayProps> = ({ text, posData }) =
       
       // Check if the part is a word we have POS data for
       if (normalizedPart && wordPosMap.has(normalizedPart)) {
-        const colors = wordPosMap.get(normalizedPart)!;
+        const styles = wordPosMap.get(normalizedPart)!;
         const counter = wordCounters.get(normalizedPart) || 0;
-        const colorClass = colors[counter % colors.length];
+        const style = styles[counter % styles.length];
         wordCounters.set(normalizedPart, counter + 1);
 
         return (
-          <span key={index} className={`${colorClass} font-medium`}>
+          <span key={index} className={`${style.textColor} ${style.bgColor} font-medium px-1 rounded`}>
             {part}
           </span>
         );

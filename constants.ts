@@ -1,4 +1,3 @@
-
 import { type PosTag } from './types';
 
 export const POS_COLORS: Record<PosTag, string> = {
@@ -12,6 +11,19 @@ export const POS_COLORS: Record<PosTag, string> = {
   DETERMINER: 'text-yellow-700',
   OTHER: 'text-gray-500',
 };
+
+export const POS_BACKGROUND_COLORS: Record<PosTag, string> = {
+  NOUN: 'bg-blue-100',
+  VERB: 'bg-green-100',
+  ADJECTIVE: 'bg-purple-100',
+  ADVERB: 'bg-orange-100',
+  PRONOUN: 'bg-red-100',
+  PREPOSITION: 'bg-teal-100',
+  CONJUNCTION: 'bg-pink-100',
+  DETERMINER: 'bg-yellow-100',
+  OTHER: 'bg-gray-100',
+};
+
 
 export const POS_DESCRIPTIONS: Record<PosTag, string> = {
   NOUN: 'Nouns (e.g., dog, idea, city)',
